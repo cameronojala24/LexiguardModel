@@ -1,16 +1,18 @@
 import { useState } from "react";
 import "./App.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function App() {
   const [text, setText] = useState("");
   const [prediction, setPrediction] = useState("");
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://localhost:8000/predict", {
+      const response = await fetch(`${API_URL}/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text })
+        body: JSON.stringify({ text }),
       });
 
       const data = await response.json();
