@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: lexiguard-server
+    rootDirectory: server
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+
+  - type: static
+    name: lexiguard-client
+    rootDirectory: client
+    buildCommand: "npm install && npm run build"
+    publishPath: "build"
+    envVars:
+      - key: REACT_APP_API_URL
+        value: "https://lexiguardserver.onrender.com"
