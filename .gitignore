@@ -1,0 +1,5 @@
+
+# Large model files (too big for GitHub)
+server/transformer_model/
+server/transformer_training/
+
