@@ -3,8 +3,5 @@ Flask-Cors
 joblib
 scikit-learn
 gunicorn
-tensorflow
 nltk
-transformers
-torch
 numpy
